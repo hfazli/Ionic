@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-buttons slot="start">
+        <ion-button routerLink="/checkout">
+          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <h2 class="title">My Address</h2>
+      <ion-buttons slot="end">
+        <ion-button expand="block" class="icon-add" (click)="goToAddAddress()"
+          >Add</ion-button
+        >
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item
+      *ngFor="let address of addresses"
+      (click)="selectAddress(address)"
+    >
+      <ion-label>
+        <h2>{{ address.name }}</h2>
+        <p>Receiver: {{ address.receiver }} - {{ address.phone }}</p>
+        <p>{{ address.fullAddress }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="deleteAddress(address); $event.stopPropagation()">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

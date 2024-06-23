@@ -1,0 +1,121 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  ion-buttons {
+    margin-right: 10px;
+  }
+
+  ion-icon {
+    color: #2596be;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #c7c7c7;
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+  }
+}
+
+ion-card {
+  --card-background: #fff;
+  --ion-card-background: #fff;
+  margin: 10px 0;
+}
+
+ion-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ion-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2696be; /* Adjust the color as needed */
+  }
+
+  .change-button {
+    display: inline-block;
+    padding: 8px 12px; /* Sesuaikan dengan ukuran padding yang Anda inginkan */
+    font-size: 14px; /* Sesuaikan dengan ukuran font yang Anda inginkan */
+    font-weight: bold; /* Sesuaikan dengan gaya tebal yang Anda inginkan */
+    color: #007bff; /* Ganti dengan warna yang Anda inginkan */
+    cursor: pointer;
+  }
+
+  .change-button:hover {
+    text-decoration: underline; /* Efek garis bawah saat hover */
+  }
+}
+
+ion-card-content {
+  ion-item {
+    --background: none;
+    --ion-background-color: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ion-thumbnail {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+
+  ion-label {
+    h2 {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #2596be; /* Adjust the color as needed */
+    }
+  }
+}
+
+ion-list {
+  ion-item {
+    --background: none;
+    --ion-background-color: none;
+    margin: 10px 0;
+  }
+
+  ion-label {
+    font-size: 1.2rem;
+    color: #2596be; /* Adjust the color as needed */
+  }
+
+  ion-note {
+    font-size: 1.2rem;
+  }
+}
+
+ion-footer {
+  ion-toolbar {
+    --background: #fff;
+    --ion-background-color: #fff;
+  }
+
+  ion-button {
+    --background: #2596be; /* Warna latar belakang tombol */
+    --background-hover: #e64917; /* Warna latar belakang tombol saat hover */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    font-size: 1rem; /* Ukuran font tombol */
+    font-weight: bold;
+    margin-top: 16px;
+    margin-bottom: 18px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+  }
+}

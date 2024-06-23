@@ -1,0 +1,97 @@
+ion-content {
+  --background: #2596be;
+  position: relative;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+
+    ion-button {
+      height: 60px;
+      width: 60px;
+
+      ion-icon {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    bottom: 0;
+    border-radius: 2rem 2rem 0 0; // Border-radius untuk sudut atas
+    padding: 2rem;
+
+    .image {
+      position: absolute;
+      top: -5.5rem; // Atur posisi top untuk gambar agar lebih ke atas
+      width: 70%; // Ukuran gambar lebih proporsional
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    ion-img {
+      border-radius: 1.5rem; // Border-radius untuk gambar
+    }
+
+    .card-title {
+      margin-top: 35%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+
+      h2 {
+        font-weight: 700;
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #ffb800;
+
+        sup {
+          font-size: 1.2rem;
+          margin-right: -0.5rem;
+        }
+      }
+    }
+
+    .rates {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+
+      ion-button {
+        --background: #2596be;
+        --color: white;
+        --border-radius: 8px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+      }
+    }
+
+    .about {
+      margin-bottom: 2.5rem;
+
+      h1 {
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #b9b9b9;
+      }
+    }
+  }
+}

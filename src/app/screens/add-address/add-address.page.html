@@ -1,0 +1,113 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-buttons slot="start">
+        <ion-button routerLink="/address">
+          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <h2 class="title">Add New Address</h2>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addressForm" (ngSubmit)="saveAddress()">
+    <ion-item>
+      <ion-label position="stacked">Address Name</ion-label>
+      <ion-input
+        type="text"
+        formControlName="addressName"
+        name="name"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Receiver Name</ion-label>
+      <ion-input
+        type="text"
+        formControlName="receiverName"
+        name="receiver"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Phone Number</ion-label>
+      <ion-input
+        type="number"
+        formControlName="phoneNumber"
+        name="phone"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Province</ion-label>
+      <ion-input
+        formControlName="province"
+        name="province"
+        readonly
+        placeholder="Select Province"
+      >
+        <ion-icon
+          name="chevron-down-outline"
+          slot="end"
+          (click)="openProvinceActionSheet()"
+        ></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">City</ion-label>
+      <ion-input
+        formControlName="city"
+        name="city"
+        readonly
+        placeholder="Select City"
+      >
+        <ion-icon
+          name="chevron-down-outline"
+          slot="end"
+          (click)="openCityActionSheet()"
+        ></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">District</ion-label>
+      <ion-input
+        type="text"
+        formControlName="districts"
+        name="districts"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Village</ion-label>
+      <ion-input
+        type="text"
+        formControlName="village"
+        name="village"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Address</ion-label>
+      <ion-textarea
+        formControlName="address"
+        name="address"
+        placeholder="Jl. Raya Ahmad Yani No. 12"
+      ></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Address Notes</ion-label>
+      <ion-textarea
+        formControlName="addressNotes"
+        name="addressNotes"
+        placeholder="Additional information"
+      ></ion-textarea>
+    </ion-item>
+
+    <ion-button type="submit" expand="block">Save Address</ion-button>
+  </form>
+</ion-content>

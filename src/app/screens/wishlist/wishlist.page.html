@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/listing">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="title-container">
+      <h2>Wishlist</h2>
+    </div>
+    <div class="cart-button">
+      <ion-buttons>
+        <ion-button routerLink="/cart">
+          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </div>
+
+  <div class="shoe-list">
+    <ng-container *ngFor="let shoe of wishlist$ | async">
+      <app-shoes-card
+        [item]="shoe"
+        (clicked)="goToDetailPage(shoe.id)"
+      ></app-shoes-card>
+    </ng-container>
+  </div>
+</ion-content>

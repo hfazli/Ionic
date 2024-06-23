@@ -1,0 +1,52 @@
+/* wishlist.page.scss */
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+
+  .title-container {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+  }
+
+  .cart-button {
+    margin-left: auto;
+    margin-right: 5px;
+  }
+
+  ion-button {
+    height: 50px; /* Perbesar tinggi tombol */
+    width: 50px; /* Perbesar lebar tombol */
+    margin-right: 5px;
+
+    ion-icon {
+      font-size: 2rem; /* Perbesar ukuran ikon */
+      color: #2596be;
+    }
+  }
+
+  h2 {
+    font-size: 2rem; /* Besarkan ukuran font */
+    font-weight: 700;
+    color: #c7c7c7;
+    margin: 0;
+    margin-left: 5px;
+  }
+}
+
+.shoe-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+  padding: 1rem;
+}
+
+.shoe-item {
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: scale(0.85); /* Kecilkan ukuran card sedikit lebih banyak */
+}

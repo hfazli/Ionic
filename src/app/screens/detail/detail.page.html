@@ -1,0 +1,55 @@
+<ion-content>
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/listing">
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons>
+      <ion-button (click)="addToWishlist()">
+        <ion-icon
+          slot="icon-only"
+          color="light"
+          name="heart-outline"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <div class="card">
+    <div class="image" *ngIf="shoe">
+      <ion-img [src]="shoe.image"></ion-img>
+    </div>
+    <div *ngIf="!shoe">
+      <p>Shoe not found.</p>
+    </div>
+
+    <div class="card-content" *ngIf="shoe; else noShoe">
+      <div class="card-title">
+        <h1>{{ shoe.title }}</h1>
+        <p class="ion-no-margin">
+          <sup>Rp.</sup>{{ shoe.price | number: '1.2' }}
+        </p>
+      </div>
+    </div>
+    <div class="rates">
+      <ion-button (click)="presentActionSheet()">
+        <ion-icon slot="icon-only" name="footsteps-outline"></ion-icon>
+        Size Chart
+      </ion-button>
+    </div>
+
+    <div class="about">
+      <h1>About</h1>
+      <p *ngIf="shoe">{{ shoe.description }}</p>
+    </div>
+
+    <app-button (click)="addItemToCart()">Add to Cart</app-button>
+  </div>
+
+  <ng-template #noShoe>
+    <div>
+      <p>Shoe not found.</p>
+    </div>
+  </ng-template>
+</ion-content>

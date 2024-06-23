@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-buttons slot="start">
+        <ion-button routerLink="/user-profile">
+          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <h2 class="title">Orders - {{ selectedSegment }}</h2>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="segment-wrapper">
+    <ion-segment
+      [(ngModel)]="selectedSegment"
+      (ionChange)="segmentChanged($event)"
+      scrollable
+    >
+      <ion-segment-button value="All"> All </ion-segment-button>
+      <ion-segment-button value="Pending"> Pending </ion-segment-button>
+      <ion-segment-button value="Paid"> Paid </ion-segment-button>
+      <ion-segment-button value="Shipped"> Shipped </ion-segment-button>
+      <ion-segment-button value="Cancel"> Cancel </ion-segment-button>
+      <ion-segment-button value="Completed"> Completed </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div *ngIf="orders.length === 0" class="empty-state">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    <p>Empty Purchase</p>
+  </div>
+
+  <!-- Order list will go here -->
+</ion-content>

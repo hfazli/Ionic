@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/listing">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="brand-header">
+      <h2>{{ brand | titlecase }} Products</h2>
+    </div>
+    <div class="description-button">
+      <ion-buttons>
+        <ion-button (click)="presentDescriptionActionSheet()">
+          <ion-icon slot="icon-only" name="information-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </div>
+
+  <div class="shoe-list">
+    <ng-container *ngFor="let shoe of shoes">
+      <app-shoes-card
+        [item]="shoe"
+        (clicked)="goToDetailPage(shoe.id)"
+      ></app-shoes-card>
+    </ng-container>
+  </div>
+</ion-content>

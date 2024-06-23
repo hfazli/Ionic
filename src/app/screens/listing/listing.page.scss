@@ -1,0 +1,89 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+ion-content {
+  --padding-start: 2rem;
+  --padding-end: 2rem;
+  --padding-bottom: 70px; /* Tambahkan padding bawah */
+  flex: 1; /* Flex-grow untuk mengisi ruang yang tersisa */
+  overflow-y: auto; /* Memastikan konten dapat digulir */
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+
+    h3 {
+      font-size: 1.8rem; /* Mengubah h1 menjadi h2 untuk konsistensi */
+      font-weight: 600;
+      color: #515151;
+      margin: 0;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      background-color: black;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; /* Mengatur overflow agar gambar tidak keluar dari lingkaran */
+    }
+
+    .avatar ion-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .list-header {
+    font-weight: 700;
+    color: #515151;
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+    margin-top: 2.5rem;
+  }
+
+  .shoe-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+ion-tab-bar {
+  padding: 10px 0;
+  background-color: white; /* Sesuaikan dengan warna latar belakang yang diinginkan */
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Opsional: Tambahkan bayangan untuk estetika */
+  pointer-events: all;
+
+  ion-tab-button {
+    ion-icon {
+      font-size: 1.7rem;
+      color: #2596be; /* Sesuaikan dengan warna yang Anda inginkan */
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.nav-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000; /* Pastikan tab bar berada di atas elemen lainnya */
+  pointer-events: none;
+}

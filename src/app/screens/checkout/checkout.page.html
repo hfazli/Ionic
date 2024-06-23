@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-buttons slot="start">
+        <ion-button routerLink="/cart">
+          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <h2 class="title">Checkout</h2>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Shipping Address Card -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Shipping Address</ion-card-title>
+      <span class="change-button" (click)="handleChangeClick()">Change</span>
+    </ion-card-header>
+    <ion-content>
+      <ion-card-content *ngIf="selectedAddress; else noAddress">
+        <p>{{ selectedAddress.name }}</p>
+        <p>
+          Receiver: {{ selectedAddress.receiver }} - {{ selectedAddress.phone }}
+        </p>
+        <p>{{ selectedAddress.fullAddress }}</p>
+      </ion-card-content>
+      <ng-template #noAddress>
+        <p>No address selected</p>
+      </ng-template>
+    </ion-content>
+  </ion-card>
+
+  <!-- Selected Item from Cart -->
+  <ion-card *ngIf="selectedShoe">
+    <ion-card-header>
+      <ion-card-title>Purchased Item</ion-card-title>
+    </ion-card-header>
+    <ion-card-content (click)="selectProduct(selectedShoe.id)">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img [src]="selectedShoe.image" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ selectedShoe.title }}</h2>
+          <p>Brand: {{ selectedShoe.brand }}</p>
+          <h3>Rp. {{ subTotalPrice }}</h3>
+        </ion-label>
+        <ion-note slot="end"
+          >{{ getCartItemQuantity(selectedShoe.id) }} Items</ion-note
+        >
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Checkout Details -->
+  <ion-list>
+    <ion-item (click)="presentShippingOptions()">
+      <ion-label>Shipping</ion-label>
+      <ion-note slot="end">Required</ion-note>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apply Voucher</ion-label>
+      <ion-note slot="end"></ion-note>
+    </ion-item>
+    <ion-item *ngIf="selectedShoe">
+      <ion-label>Sub Total</ion-label>
+      <ion-note slot="end">Rp. {{ subTotalPrice }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Redeem Points</ion-label>
+      <ion-note slot="end">Rp. 0</ion-note>
+    </ion-item>
+    <ion-item *ngIf="selectedShoe">
+      <ion-label>Grand Total</ion-label>
+      <ion-note slot="end">Rp. {{ subTotalPrice }}</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <!-- Checkout Button -->
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button expand="block" type="submit">Checkout</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

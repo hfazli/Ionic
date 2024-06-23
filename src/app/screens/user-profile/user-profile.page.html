@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-buttons slot="start">
+        <ion-button routerLink="/listing">
+          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <h2 class="title">Profile</h2>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="profile-card">
+    <ion-card-content>
+      <div class="profile-header">
+        <img [src]="profileImage" class="profile-img" />
+        <h2 class="profile-name">{{ userName }}</h2>
+        <button ion-button class="detail-button">Detail</button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="profile-info">
+    <div class="info-item">
+      <ion-icon name="medal-outline"></ion-icon>
+      <span>My Points</span>
+      <p>5,000 Points</p>
+    </div>
+    <div class="info-item">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <span>Joined Date</span>
+      <p>{{ joinedDate }}</p>
+    </div>
+  </div>
+
+  <div class="menu-section">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card class="menu-item" (click)="navigateTo('order')">
+            <ion-card-content>
+              <ion-icon name="cart-outline"></ion-icon>
+              <p>Order</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4">
+          <ion-card class="menu-item" (click)="navigateTo('notification')">
+            <ion-card-content>
+              <ion-icon name="notifications-outline"></ion-icon>
+              <p>Notification</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4">
+          <ion-card class="menu-item" (click)="navigateTo('settings')">
+            <ion-card-content>
+              <ion-icon name="settings-outline"></ion-icon>
+              <p>Settings</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="voucher-section">
+    <h3>My Voucher</h3>
+    <div class="voucher-item">
+      <h4>Welcome</h4>
+      <p>Discount: Rp. 50.000</p>
+      <p>Min Transaction: Rp. 499.000</p>
+      <p>Valid Until: 2024-12-31</p>
+    </div>
+  </div>
+</ion-content>

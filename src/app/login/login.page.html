@@ -1,0 +1,66 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/signup">Sign Up</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="upper">
+    <div class="icon">
+      <img src="../../assets/icon/logo.png" alt="logo-z" />
+    </div>
+    <div class="title">
+      <p id="login">Zek Shoes</p>
+    </div>
+  </div>
+
+  <div class="middle">
+    <div class="box">
+      <form #loginForm="ngForm">
+        <p>Please Login to Your Account</p>
+
+        <ion-item>
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input
+            type="email"
+            aria-placeholder="Email Address"
+            name="email"
+            [(ngModel)]="email"
+            required
+          ></ion-input>
+          <ion-icon
+            class="ion-align-self-center"
+            slot="end"
+            name="mail"
+          ></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input
+            type="{{ hidePassword ? 'password' : 'text' }}"
+            aria-placeholder="Password"
+            name="password"
+            [(ngModel)]="password"
+            required
+          ></ion-input>
+          <ion-icon
+            class="ion-align-self-center"
+            slot="end"
+            [name]="hidePassword ? 'eye-outline' : 'eye-off-outline'"
+            (click)="togglePassword()"
+          ></ion-icon>
+        </ion-item>
+
+        <p id="donthaveAccount">
+          Don't have an account? <a routerLink="/signup">Sign Up</a>
+        </p>
+
+        <div class="btn">
+          <ion-button (click)="login()">Login</ion-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

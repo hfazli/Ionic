@@ -1,0 +1,101 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  ion-buttons {
+    margin-right: 10px;
+  }
+
+  ion-icon {
+    color: #2596be;
+    font-size: 24px; /* Ukuran font sesuaikan dengan yang diinginkan */
+  }
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #c7c7c7;
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+  }
+}
+
+ion-content {
+  --ion-background-color: #f8f9fa; /* Warna latar belakang untuk seluruh konten */
+  padding: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Jarak antar elemen */
+}
+
+ion-item {
+  --highlight-background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk tiap item */
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #ffffff;
+}
+
+ion-label {
+  font-weight: bold;
+  color: #2596be;
+  font-size: 1rem; /* Ukuran font label */
+  margin-bottom: 4px;
+  padding-bottom: 8px; /* Jarak antara ion-label dan ion-input */
+}
+
+ion-input,
+ion-select,
+ion-textarea {
+  --background: #ffffff;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  border-radius: 4px;
+  font-size: 0.9rem; /* Ukuran font input, select, textarea */
+  color: #333333;
+  margin-top: 8px; /* Jarak antara ion-input dan ion-label */
+}
+
+ion-button {
+  --background: #2596be; /* Warna latar belakang tombol */
+  --background-hover: #e64917; /* Warna latar belakang tombol saat hover */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  font-size: 1rem; /* Ukuran font tombol */
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 18px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+}
+
+ion-item ion-input::part(native),
+ion-item ion-select::part(native),
+ion-item ion-textarea::part(native) {
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+ion-item ion-select::part(placeholder) {
+  color: #999999; /* Warna placeholder select */
+}
+
+ion-select::part(placeholder) {
+  color: #999999;
+}
+
+ion-item ion-input::part(native-input),
+ion-item ion-select::part(native-select),
+ion-item ion-textarea::part(native-textarea) {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+ion-item:last-child {
+  margin-bottom: 0; /* Menghapus margin di item terakhir */
+}

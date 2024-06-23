@@ -1,0 +1,42 @@
+ion-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .background-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background: url("../../assets/images/shoe_aesthetic.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ion-card {
+    background: transparent !important; /* Pastikan kartu tidak memiliki latar belakang */
+    box-shadow: none !important; /* Menghapus bayangan jika ada */
+  }
+
+  ion-card-content {
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    background: transparent !important; /* Pastikan konten kartu tidak memiliki latar belakang */
+  }
+
+  .custom-button {
+    width: 180px;
+    height: 60px;
+    --border-radius: 40px;
+    --background: #2596be;
+    font-weight: 400;
+    text-transform: none;
+    margin-top: 20px;
+  }
+}
